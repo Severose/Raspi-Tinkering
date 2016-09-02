@@ -1,4 +1,7 @@
+#!/bin/bash
 #https://sysadminblogger.wordpress.com/2014/06/17/a-rather-secure-raspberry-pi-puppy-cam/
+
+echo "Making things more secure..."
 
 # Just because
 iptables -A INPUT -j ACCEPT -m state –state ESTABLISHED,RELATED
@@ -20,3 +23,5 @@ iptables -I INPUT -p tcp -m tcp -s 0.0.0.0/0 –dport 22 -j DROP
 
 # Deny all access not explicitly allowed by a rule
 iptables -P INPUT DROP
+
+echo "You're no longer dangerous!"
